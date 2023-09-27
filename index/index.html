@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <style>
+   body{
+    background-image: linear-gradient(to right, white , blue);
+   }
+   .dyn{
+    text-align: center;
+    font-size: 50px;
+   }
+
+   #clock{
+    text-align: center;
+    color: white;
+   }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="dyn">The Dynamic clock</h1>
+    <p id="clock"></p>
+    <audio src="tick.mp3" loop autoplay type="audio/mp3"  >
+    </audio>
+    </div>
+    <script>
+    let clock = setInterval(clocktiming,1000)
+    
+       function clocktiming(){
+           let a = new Date()
+          let v = a.toLocaleTimeString() 
+        //   document.write(v)         
+        document.getElementById("clock").innerHTML= v;
+        document.getElementById("clock").style.fontSize = "105px";
+        document.getElementById("clock").style.margin = "200px 450px";
+        document.getElementById("clock").style.border = "5px solid black";
+        document.getElementById("clock").style.borderRadius = "20px";
+        document.getElementById("clock").style.padding= "10px";
+    }
+     
+    
+    </script>
+</body>
+</html>
